@@ -1,2 +1,53 @@
-# Image-watermarking-intelligent-optimization
-In this project, a new Watermarking method based on the optimization framework and discrete wavelet transform (DWT) is presented. In this method, first, the watermark image is divided into several blocks. Then, using differential evolution (DE) algorithm, an appropriate location for each of these blocks is found in the cover image. In the proposed method, the results of the DE algorithm, which is needed for the reconstruction phase are also embedded as a vector in the cover image under the wavelet domain. Also, to achieve the highest PSNR in the reconstruction phase, the optimal values for Alpha-blending coefficients (used in the embedding and extraction process) are determined with the multi-objective DE-based optimization algorithm. Several experiments are presented to illustrate the imperceptibility and robustness of the proposed algorithm against different types of attacks, including salt and pepper, Gaussian, median filtering, rescaling, compression, and rotation. The obtained results are also compared with state-of-the-art methods and show the superiority of the proposed method in most cases.
+# NewMethod
+
+This repository contains the implementation of a watermarking algorithm using evolutionary optimization techniques. The algorithm processes two input images: a cover image and a watermark image, and embeds the watermark into the cover image.
+
+## Features
+
+- **Image Watermarking**: Embeds a watermark into a cover image.
+- **Optimization**: Uses a differential evolution-based algorithm to optimize the embedding process.
+- **Performance Metrics**: Calculates PSNR (Peak Signal-to-Noise Ratio) for both the watermarked image and the extracted watermark.
+- **Visualization**: Displays the cover image, watermarked image, disorganized watermark, and extracted watermark for comparison.
+
+## Input
+
+- `cover.jpg`: The cover image (used as the base image for embedding the watermark).
+- `cameraman.jpg`: The watermark image (to be embedded into the cover image).
+
+## Output
+
+- `Watermarked.bmp`: The resulting image with the embedded watermark.
+- `extracted.bmp`: The extracted watermark after processing.
+- Performance metrics (`PSNR` values) for both the watermarked image and the extracted watermark.
+
+## How It Works
+
+1. **Initialization**:
+   - Converts input images to grayscale and normalizes them.
+   - Generates an initial population for optimization.
+
+2. **Embedding**:
+   - Embeds the watermark into the cover image using optimized parameters.
+   - Measures the quality of embedding using PSNR.
+
+3. **Optimization**:
+   - Implements differential evolution to minimize cost functions.
+   - Updates population based on mutation, crossover, and selection.
+
+4. **Visualization**:
+   - Displays the results, including:
+     - Original cover image
+     - Watermarked image
+     - Disorganized original watermark
+     - Extracted watermark
+
+5. **Saving Results**:
+   - Saves the watermarked image and the extracted watermark.
+   - Saves the best solution and the calculated PSNR values.
+
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repository-name.git
+   cd your-repository-name
